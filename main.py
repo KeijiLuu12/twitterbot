@@ -4,7 +4,7 @@ import tweepy
 import keys
 
 def get_info():
-    with open('/Users/kiwi/coding/PythonCode/twitterbot/facts.json', 'r', encoding='utf-8') as read_file:
+    with open('facts.json', 'r', encoding='utf-8') as read_file:
         facts = json.load(read_file)
     random_fact = random.choice(facts["facts"])
    
