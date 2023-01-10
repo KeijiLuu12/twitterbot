@@ -16,7 +16,7 @@ def tweet_reply(tweet_api: tweepy.API, message: str, user_id: int):
 
 if __name__ == '__main__':
 
-    with open('/Users/kiwi/coding/PythonCode/twitterbot/mentionedid.txt', 'r', encoding='utf-8') as mentioned_file:
+    with open('mentionedid.txt', 'r', encoding='utf-8') as mentioned_file:
         last_mentioned = mentioned_file.read()
     api = api()
 
@@ -25,7 +25,7 @@ if __name__ == '__main__':
     else:
         mentions = api.mentions_timeline(count=3, since_id=last_mentioned)
     for mention in mentions:
-        with open('/Users/kiwi/coding/PythonCode/twitterbot/mentionedid.txt', 'w', encoding='utf-8') as mentioned_file:
+        with open('mentionedid.txt', 'w', encoding='utf-8') as mentioned_file:
             mentioned_file.write(str(mentions[0].id)) 
             
     if mentions:
